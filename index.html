@@ -41,11 +41,20 @@
             opacity: 0.9;
         }
 
+        .category-title {
+            color: white;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .game-card {
@@ -113,6 +122,7 @@
             padding: 30px 20px;
             border-top: 1px solid rgba(255,255,255,0.2);
             opacity: 0.8;
+            margin-top: 50px;
         }
 
         @media (max-width: 768px) {
@@ -133,8 +143,9 @@
             <p>Play amazing games directly in your browser - No downloads needed!</p>
         </header>
 
+        <!-- MINECRAFT-LIKE GAMES -->
+        <h2 class="category-title">⛏️ Minecraft-Like Games</h2>
         <div class="games-grid">
-            <!-- Minecraft-like Games -->
             <div class="game-card">
                 <div class="game-image">⛏️</div>
                 <div class="game-content">
@@ -162,7 +173,6 @@
                 </div>
             </div>
 
-            <!-- Sandbox Games -->
             <div class="game-card">
                 <div class="game-image">🧱</div>
                 <div class="game-content">
@@ -172,6 +182,28 @@
                 </div>
             </div>
 
+            <div class="game-card">
+                <div class="game-image">🌎</div>
+                <div class="game-content">
+                    <h3>Minetest</h3>
+                    <p>Open-source voxel game engine with infinite possibilities and mods.</p>
+                    <a href="https://minetest.net" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">📦</div>
+                <div class="game-content">
+                    <h3>Roblox</h3>
+                    <p>Massive multiplayer platform with thousands of user-created games.</p>
+                    <a href="https://www.roblox.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SANDBOX & BUILDING GAMES -->
+        <h2 class="category-title">👷 Sandbox & Building Games</h2>
+        <div class="games-grid">
             <div class="game-card">
                 <div class="game-image">👥</div>
                 <div class="game-content">
@@ -190,7 +222,46 @@
                 </div>
             </div>
 
-            <!-- Action/Adventure Games -->
+            <div class="game-card">
+                <div class="game-image">🎨</div>
+                <div class="game-content">
+                    <h3>Gartic Phone</h3>
+                    <p>Draw and guess game with friends. Creative and hilarious!</p>
+                    <a href="https://garticphone.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎪</div>
+                <div class="game-content">
+                    <h3>Skribbl.io</h3>
+                    <p>Draw and guess game. Quick rounds with 1-8 players online.</p>
+                    <a href="https://skribbl.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏗️</div>
+                <div class="game-content">
+                    <h3>Paper Minecraft</h3>
+                    <p>Minecraft-style game in 2D with survival and creative modes.</p>
+                    <a href="https://paperminecraft.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🌊</div>
+                <div class="game-content">
+                    <h3>HyperCasual.io</h3>
+                    <p>Collection of simple, fun hyper-casual games.</p>
+                    <a href="https://itch.io/games/free/platform-web" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACTION & BATTLE GAMES -->
+        <h2 class="category-title">⚔️ Action & Battle Games</h2>
+        <div class="games-grid">
             <div class="game-card">
                 <div class="game-image">⚔️</div>
                 <div class="game-content">
@@ -210,7 +281,7 @@
             </div>
 
             <div class="game-card">
-                <div class="game-image">🚀</div>
+                <div class="game-image">🐍</div>
                 <div class="game-content">
                     <h3>Slither.io</h3>
                     <p>Multiplayer snake game. Grow your snake and compete with players worldwide.</p>
@@ -218,7 +289,95 @@
                 </div>
             </div>
 
-            <!-- Puzzle/Strategy Games -->
+            <div class="game-card">
+                <div class="game-image">🎯</div>
+                <div class="game-content">
+                    <h3>Geom Dash</h3>
+                    <p>Rhythm platformer. Jump over obstacles in this fast-paced game.</p>
+                    <a href="https://gamedistribution.com/games/geometry-dash" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🔫</div>
+                <div class="game-content">
+                    <h3>Krunker</h3>
+                    <p>Fast-paced multiplayer FPS game in your browser. Highly customizable.</p>
+                    <a href="https://krunker.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">💣</div>
+                <div class="game-content">
+                    <h3>Zombsroyale</h3>
+                    <p>Zombie battle royale game. Fight 100 players in fast action.</p>
+                    <a href="https://zombsroyale.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- RACING GAMES -->
+        <h2 class="category-title">🏎️ Racing Games</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-image">🏎️</div>
+                <div class="game-content">
+                    <h3>Madalin Stunt Cars</h3>
+                    <p>Multiplayer stunt driving game with exotic cars and massive tracks.</p>
+                    <a href="https://madalinstuntcars.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏁</div>
+                <div class="game-content">
+                    <h3>Car Parking Multiplayer</h3>
+                    <p>Multiplayer parking game. Park your car and customize it.</p>
+                    <a href="https://carparkingmultiplayer.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🚗</div>
+                <div class="game-content">
+                    <h3>Drift Hunters</h3>
+                    <p>Free online drift racing game. Collect cars and customize them.</p>
+                    <a href="https://drifthunters.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏎️</div>
+                <div class="game-content">
+                    <h3>Super Drift</h3>
+                    <p>Drifting racing game with multiplayer modes and beautiful cars.</p>
+                    <a href="https://gamedistribution.com/games/super-drift" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🚙</div>
+                <div class="game-content">
+                    <h3>Voxel Blast Racing</h3>
+                    <p>Voxel-style racing game with unique graphics.</p>
+                    <a href="https://itch.io/games/free/platform-web/tag-racing" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🚁</div>
+                <div class="game-content">
+                    <h3>War Plane</h3>
+                    <p>Plane racing and combat game. Fly and compete online.</p>
+                    <a href="https://gamedistribution.com/games/war-plane" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUZZLE & STRATEGY GAMES -->
+        <h2 class="category-title">🧩 Puzzle & Strategy Games</h2>
+        <div class="games-grid">
             <div class="game-card">
                 <div class="game-image">♟️</div>
                 <div class="game-content">
@@ -238,11 +397,212 @@
             </div>
 
             <div class="game-card">
+                <div class="game-image">2048</div>
+                <div class="game-content">
+                    <h3>2048</h3>
+                    <p>Combine tiles and reach the 2048 tile. Simple but challenging puzzle game.</p>
+                    <a href="https://2048game.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎮</div>
+                <div class="game-content">
+                    <h3>Wordle</h3>
+                    <p>Guess the word in 6 tries. A daily word puzzle challenge.</p>
+                    <a href="https://www.nytimes.com/games/wordle/" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🔲</div>
+                <div class="game-content">
+                    <h3>Sudoku</h3>
+                    <p>Classic number puzzle game. Solve grids and challenge yourself.</p>
+                    <a href="https://sudoku.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
                 <div class="game-image">🎯</div>
                 <div class="game-content">
-                    <h3>FPS Games on Itch.io</h3>
-                    <p>Browse hundreds of browser-based games on Itch.io including shooters and indie titles.</p>
+                    <h3>Cookie Clicker</h3>
+                    <p>Idle clicker game. Click cookies and build your cookie empire!</p>
+                    <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPORTS GAMES -->
+        <h2 class="category-title">⚽ Sports Games</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-image">⚽</div>
+                <div class="game-content">
+                    <h3>Soccer Physics</h3>
+                    <p>Physics-based soccer game. Funny ragdoll animations and chaos!</p>
+                    <a href="https://gamedistribution.com/games/soccer-physics" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏀</div>
+                <div class="game-content">
+                    <h3>Basketball Stars</h3>
+                    <p>Shoot hoops and score points in this basketball game.</p>
+                    <a href="https://gamedistribution.com/games/basketball-stars" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎾</div>
+                <div class="game-content">
+                    <h3>Tennis Masters</h3>
+                    <p>Play tennis matches online against other players.</p>
+                    <a href="https://gamedistribution.com/games/tennis-masters" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏌️</div>
+                <div class="game-content">
+                    <h3>Mini Golf Multiplayer</h3>
+                    <p>Play mini golf with friends online. Simple fun with golf!</p>
+                    <a href="https://minigolfmultiplayer.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">⚾</div>
+                <div class="game-content">
+                    <h3>Baseball Superstars</h3>
+                    <p>Play baseball and manage your team. Build your legacy!</p>
+                    <a href="https://gamedistribution.com/games/baseball-superstars" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🥊</div>
+                <div class="game-content">
+                    <h3>Boxing Random</h3>
+                    <p>Fight opponents in this boxing game. Punch, dodge, and win!</p>
+                    <a href="https://boxingrandom.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADVENTURE & RPG GAMES -->
+        <h2 class="category-title">🗡️ Adventure & RPG Games</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-image">🗡️</div>
+                <div class="game-content">
+                    <h3>Slime Dungeon</h3>
+                    <p>RPG adventure game. Explore dungeons and fight monsters!</p>
+                    <a href="https://gamedistribution.com/games/slime-dungeon" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🧛</div>
+                <div class="game-content">
+                    <h3>Town of Salem</h3>
+                    <p>Strategic social deduction game. Work with villagers or deceive them!</p>
+                    <a href="https://www.blankmediagames.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">⚔️</div>
+                <div class="game-content">
+                    <h3>Swordmaster Story</h3>
+                    <p>Roguelike RPG adventure. Fight monsters and upgrade your hero!</p>
+                    <a href="https://gamedistribution.com/games/swordmaster-story" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏰</div>
+                <div class="game-content">
+                    <h3>Kingdom Rush</h3>
+                    <p>Tower defense game with RPG elements. Defend your kingdom!</p>
+                    <a href="https://www.kongregate.com/games/Ironhide/kingdom-rush" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🌙</div>
+                <div class="game-content">
+                    <h3>Realm of The Mad God</h3>
+                    <p>MMO bullet-hell game. Permadeath roguelike adventure!</p>
+                    <a href="https://www.realmofthemadgod.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🧙</div>
+                <div class="game-content">
+                    <h3>Wizard Legend</h3>
+                    <p>Fantasy RPG adventure with magic and spells.</p>
+                    <a href="https://itch.io/games/free/platform-web/tag-rpg" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MORE GAMES -->
+        <h2 class="category-title">🎲 More Games to Explore</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-image">🎯</div>
+                <div class="game-content">
+                    <h3>Itch.io Game Library</h3>
+                    <p>Browse thousands of free indie games. Discover hidden gems!</p>
                     <a href="https://itch.io/games/free/platform-web" target="_blank" class="play-btn">Explore</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎮</div>
+                <div class="game-content">
+                    <h3>Kongregate</h3>
+                    <p>Play classic browser games. Huge collection of free online games.</p>
+                    <a href="https://www.kongregate.com" target="_blank" class="play-btn">Explore</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🕹️</div>
+                <div class="game-content">
+                    <h3>Game Jolt</h3>
+                    <p>Indie game platform with thousands of unique games to play.</p>
+                    <a href="https://gamejolt.com" target="_blank" class="play-btn">Explore</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎪</div>
+                <div class="game-content">
+                    <h3>Newgrounds</h3>
+                    <p>Home of flash and browser games. Classic games and new releases.</p>
+                    <a href="https://www.newgrounds.com" target="_blank" class="play-btn">Explore</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">⭐</div>
+                <div class="game-content">
+                    <h3>Cool Math Games</h3>
+                    <p>Educational games and puzzles. Fun and brain-boosting!</p>
+                    <a href="https://www.coolmathgames.com" target="_blank" class="play-btn">Explore</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎨</div>
+                <div class="game-content">
+                    <h3>Pogo.com</h3>
+                    <p>Popular online game portal with classic and modern games.</p>
+                    <a href="https://www.pogo.com" target="_blank" class="play-btn">Explore</a>
                 </div>
             </div>
         </div>
