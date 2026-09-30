@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Games Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-content h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .game-content p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .play-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95em;
+        }
+
+        .play-btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Browser Games Hub</h1>
+            <p>Play amazing games directly in your browser - No downloads needed!</p>
+        </header>
+
+        <div class="games-grid">
+            <!-- Minecraft-like Games -->
+            <div class="game-card">
+                <div class="game-image">⛏️</div>
+                <div class="game-content">
+                    <h3>Eaglercraft</h3>
+                    <p>Play Minecraft directly in your browser. Full vanilla experience without downloads.</p>
+                    <a href="https://eaglercraft.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏗️</div>
+                <div class="game-content">
+                    <h3>ClassiCube</h3>
+                    <p>Classic Minecraft experience. Open-source and runs right in your browser.</p>
+                    <a href="https://classicube.net" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎮</div>
+                <div class="game-content">
+                    <h3>bloxd.io</h3>
+                    <p>Voxel-based multiplayer game with minigames and building mechanics.</p>
+                    <a href="https://bloxd.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <!-- Sandbox Games -->
+            <div class="game-card">
+                <div class="game-image">🧱</div>
+                <div class="game-content">
+                    <h3>Mine Blocks</h3>
+                    <p>2D Minecraft clone with crafting and building mechanics. Simple and fun!</p>
+                    <a href="https://mineblocks.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">👥</div>
+                <div class="game-content">
+                    <h3>Tribals.io</h3>
+                    <p>Multiplayer sandbox with crafting, survival, and tribe-building gameplay.</p>
+                    <a href="https://tribals.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🌍</div>
+                <div class="game-content">
+                    <h3>Polytoria</h3>
+                    <p>Free-to-play sandbox with multiplayer, social hub, and creation tools.</p>
+                    <a href="https://polytoria.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <!-- Action/Adventure Games -->
+            <div class="game-card">
+                <div class="game-image">⚔️</div>
+                <div class="game-content">
+                    <h3>Diep.io</h3>
+                    <p>Multiplayer tank battle game. Upgrade your tank and defeat enemies online.</p>
+                    <a href="https://diep.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🍔</div>
+                <div class="game-content">
+                    <h3>Agar.io</h3>
+                    <p>Multiplayer game where you grow your cell by eating others. Simple but addictive!</p>
+                    <a href="https://agar.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🚀</div>
+                <div class="game-content">
+                    <h3>Slither.io</h3>
+                    <p>Multiplayer snake game. Grow your snake and compete with players worldwide.</p>
+                    <a href="https://slither.io" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <!-- Puzzle/Strategy Games -->
+            <div class="game-card">
+                <div class="game-image">♟️</div>
+                <div class="game-content">
+                    <h3>Chess.com</h3>
+                    <p>Play chess online with millions of players. Learn and improve your skills.</p>
+                    <a href="https://chess.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🧩</div>
+                <div class="game-content">
+                    <h3>Tetris</h3>
+                    <p>Classic Tetris game. Stack blocks and complete lines to score points.</p>
+                    <a href="https://tetris.com" target="_blank" class="play-btn">Play Now</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎯</div>
+                <div class="game-content">
+                    <h3>FPS Games on Itch.io</h3>
+                    <p>Browse hundreds of browser-based games on Itch.io including shooters and indie titles.</p>
+                    <a href="https://itch.io/games/free/platform-web" target="_blank" class="play-btn">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Browser Games Hub. All games link to their respective websites.</p>
+            <p>Made with ❤️ - No affiliation with game creators</p>
+        </footer>
+    </div>
+</body>
+</html>
