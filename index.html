@@ -1,44 +1,339 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Browser Games Hub</title>
-  <style>
-    *{box-sizing:border-box}body{margin:0;padding:20px;font-family:Segoe UI,Tahoma,sans-serif;background:linear-gradient(135deg,#1e3c72,#2a5298);min-height:100vh;color:#fff}.container{max-width:1200px;margin:auto}header{position:relative;text-align:center;padding:25px 300px 35px 20px}h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 10px;text-shadow:2px 2px 4px #0005}header p{font-size:1.1rem;margin:0;opacity:.9}.search-box{position:absolute;right:0;top:28px;display:flex;gap:6px;width:280px}.search-box input{width:100%;padding:12px 14px;border:0;border-radius:8px;font-size:1rem;outline:0}.search-box button{border:0;border-radius:8px;padding:0 13px;background:#764ba2;color:#fff;font-size:1.1rem;cursor:pointer}.search-box button:hover{background:#5b3788}.category-title{font-size:1.7rem;margin:30px 0 18px;padding-bottom:9px;border-bottom:2px solid #ffffff4d}.games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}.game-card{background:#fff;color:#333;border-radius:10px;overflow:hidden;box-shadow:0 8px 16px #0003;transition:.25s}.game-card:hover{transform:translateY(-7px);box-shadow:0 12px 24px #0005}.game-image{height:125px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#667eea,#764ba2)}.game-content{padding:18px}.game-content h3{margin:0 0 8px;font-size:1.25rem}.game-content p{color:#666;line-height:1.45;margin:0 0 14px}.play-btn{display:inline-block;padding:10px 18px;border-radius:5px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;text-decoration:none;font-weight:700}.play-btn:hover{opacity:.85}.no-results{display:none;text-align:center;padding:35px;background:#ffffff1a;border-radius:10px;font-size:1.2rem}footer{text-align:center;margin-top:45px;padding:25px;border-top:1px solid #ffffff33;opacity:.8}@media(max-width:700px){header{padding:20px 10px 105px}.search-box{top:auto;bottom:25px;left:10%;right:10%;width:80%}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Games Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 25px 300px 35px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            position: absolute;
+            right: 0;
+            top: 28px;
+            display: flex;
+            gap: 6px;
+            width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-box button {
+            border: none;
+            border-radius: 8px;
+            padding: 0 13px;
+            background: #764ba2;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #5b3788;
+        }
+
+        .category-title {
+            color: white;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-content h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .game-content p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .play-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95em;
+        }
+
+        .play-btn:hover {
+            opacity: 0.9;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 35px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header {
+                padding: 20px 10px 105px;
+            }
+
+            .search-box {
+                top: auto;
+                bottom: 25px;
+                left: 10%;
+                right: 10%;
+                width: 80%;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>🎮 Browser Games Hub</h1>
-    <p>Play amazing games directly in your browser — no downloads needed!</p>
-    <form class="search-box" id="searchForm" role="search">
-      <input id="gameSearch" type="search" placeholder="Search games..." aria-label="Search games">
-      <button type="submit" aria-label="Search">🔍</button>
-    </form>
-  </header>
-  <main id="gameSections"></main>
-  <div class="no-results" id="noResults">No games found. Try another search.</div>
-  <footer><p>© 2024 Browser Games Hub. All games link to their respective websites.</p><p>Made with ❤️ — No affiliation with game creators</p></footer>
-</div>
-<script>
-const sections=[
-['⭐ Featured Games',[['👊','Super Smash Flash 2','Fan-made fighting game with tons of characters.','https://www.supersmashflash.com'],['🚴','Happy Wheels','Physics-based racing with hilarious ragdoll characters.','https://www.totaljerkface.com/happywheels.php']]],
-['⛏️ Minecraft-Like Games',[['⛏️','Eaglercraft','Play Minecraft directly in your browser.','https://eaglercraft.com'],['🏗️','ClassiCube','Classic Minecraft-style experience.','https://classicube.net'],['🎮','bloxd.io','Voxel multiplayer game with building and minigames.','https://bloxd.io'],['🧱','Mine Blocks','2D Minecraft-style crafting and building.','https://mineblocks.com'],['🌎','Minetest','Open-source voxel game engine.','https://minetest.net'],['📦','Roblox','Thousands of user-created multiplayer games.','https://www.roblox.com']]],
-['👷 Sandbox & Building Games',[['👥','Tribals.io','Craft, survive, and build with your tribe.','https://tribals.io'],['🌍','Polytoria','Multiplayer sandbox and creation tools.','https://polytoria.com'],['🎨','Gartic Phone','Draw and guess with friends.','https://garticphone.com'],['🎪','Skribbl.io','Online drawing and guessing game.','https://skribbl.io'],['🏗️','Paper Minecraft','2D Minecraft-style survival and creative modes.','https://paperminecraft.com'],['🌊','HyperCasual.io','A collection of quick browser games.','https://itch.io/games/free/platform-web']]],
-['⚔️ Action & Battle Games',[['⚔️','Diep.io','Upgrade your tank and battle online.','https://diep.io'],['🍔','Agar.io','Grow your cell by eating others.','https://agar.io'],['🐍','Slither.io','Grow your snake against players worldwide.','https://slither.io'],['🎯','Geometry Dash','Rhythm platformer with challenging obstacles.','https://gamedistribution.com/games/geometry-dash'],['🔫','Krunker','Fast-paced multiplayer browser FPS.','https://krunker.io'],['💣','ZombsRoyale','Zombie battle royale action.','https://zombsroyale.io']]],
-['🏎️ Racing Games',[['🏎️','Madalin Stunt Cars','Drive exotic cars on huge stunt tracks.','https://madalinstuntcars.com'],['🏁','Car Parking Multiplayer','Park and customize cars online.','https://carparkingmultiplayer.com'],['🚗','Drift Hunters','Collect cars and master drifting.','https://drifthunters.io'],['🏎️','Super Drift','Fast drifting game with multiplayer modes.','https://gamedistribution.com/games/super-drift'],['🚙','Voxel Racing','Discover free voxel-style racing games.','https://itch.io/games/free/platform-web/tag-racing'],['🚁','War Plane','Fly and compete in browser combat games.','https://gamedistribution.com/games/war-plane']]],
-['🧩 Puzzle & Strategy Games',[['♟️','Chess.com','Play chess and improve your skills.','https://chess.com'],['🧩','Tetris','Classic block-stacking puzzle game.','https://tetris.com'],['2048','2048','Combine tiles and reach 2048.','https://2048game.com'],['🎮','Wordle','Guess the word in six tries.','https://www.nytimes.com/games/wordle/'],['🔲','Sudoku','Solve classic number puzzles.','https://sudoku.com'],['🎯','Cookie Clicker','Build your cookie empire.','https://orteil.dashnet.org/cookieclicker/']]],
-['⚽ Sports Games',[['⚽','Soccer Physics','Funny physics-based soccer matches.','https://gamedistribution.com/games/soccer-physics'],['🏀','Basketball Stars','Shoot hoops and score points.','https://gamedistribution.com/games/basketball-stars'],['🎾','Tennis Masters','Play online tennis matches.','https://gamedistribution.com/games/tennis-masters'],['🏌️','Mini Golf','Play mini golf with friends.','https://itch.io/games/free/platform-web/tag-sports'],['⚾','Baseball Games','Play browser baseball games.','https://gamedistribution.com/games/baseball-superstars'],['🥊','Boxing Random','Punch, dodge, and win.','https://boxingrandom.com']]],
-['🗡️ Adventure & RPG Games',[['🗡️','Slime Dungeon','Explore dungeons and fight monsters.','https://itch.io/games/free/platform-web/tag-rpg'],['🧛','Town of Salem','Strategic social deduction game.','https://www.blankmediagames.com'],['🏰','Kingdom Rush','Defend your kingdom with tower defense.','https://www.kongregate.com/games/Ironhide/kingdom-rush'],['🌙','Realm of the Mad God','Bullet-hell MMO roguelike adventure.','https://www.realmofthemadgod.com'],['🧙','Wizard Games','Discover free browser RPG adventures.','https://itch.io/games/free/platform-web/tag-rpg']]],
-['🎲 More Games to Explore',[['🎯','Itch.io','Thousands of free indie browser games.','https://itch.io/games/free/platform-web'],['🎮','Kongregate','Classic and modern online games.','https://www.kongregate.com'],['🕹️','Game Jolt','A library of indie games.','https://gamejolt.com'],['🎪','Newgrounds','Classic and new browser games.','https://www.newgrounds.com'],['⭐','Cool Math Games','Games and brain-boosting puzzles.','https://www.coolmathgames.com'],['🎨','Pogo','Classic and modern online games.','https://www.pogo.com']]]
-];
-const root=document.getElementById('gameSections');
-sections.forEach(([category,games])=>{const title=document.createElement('h2');title.className='category-title';title.textContent=category;const grid=document.createElement('div');grid.className='games-grid';games.forEach(([icon,name,description,url])=>{const card=document.createElement('article');card.className='game-card';card.dataset.search=(name+' '+description+' '+category).toLowerCase();card.innerHTML=`<div class="game-image">${icon}</div><div class="game-content"><h3>${name}</h3><p>${description}</p><a class="play-btn" href="${url}" target="_blank" rel="noopener noreferrer">Play Now</a></div>`;grid.appendChild(card)});root.append(title,grid)});
-const cards=[...document.querySelectorAll('.game-card')],noResults=document.getElementById('noResults'),search=document.getElementById('gameSearch');
-function filterGames(){const query=search.value.trim().toLowerCase();let visible=0;cards.forEach(card=>{const match=!query||card.dataset.search.includes(query);card.style.display=match?'':'none';if(match)visible++});document.querySelectorAll('.category-title').forEach(title=>{const grid=title.nextElementSibling;title.style.display=[...grid.children].some(card=>card.style.display!=='none')?'':'none';grid.style.display=[...grid.children].some(card=>card.style.display!=='none')?'':'none'});noResults.style.display=visible?'none':'block'}
-search.addEventListener('input',filterGames);document.getElementById('searchForm').addEventListener('submit',e=>e.preventDefault());
-</script>
+    <div class="container">
+        <header>
+            <h1>🎮 Browser Games Hub</h1>
+            <p>Play amazing games directly in your browser - No downloads needed!</p>
+            <form class="search-box" id="searchForm" role="search">
+                <input id="gameSearch" type="search" placeholder="Search games..." aria-label="Search games">
+                <button type="submit" aria-label="Search">🔍</button>
+            </form>
+        </header>
+
+        <main id="gameSections"></main>
+        <div class="no-results" id="noResults">No games found. Try another search.</div>
+
+        <footer>
+            <p>&copy; 2024 Browser Games Hub. All games link to their respective websites.</p>
+            <p>Made with ❤️ - No affiliation with game creators</p>
+        </footer>
+    </div>
+
+    <script>
+        const sections = [
+            ['⭐ Featured Games', [
+                ['👊', 'Super Smash Flash 2', 'Fan-made Smash Bros fighting game with tons of characters. Battle your friends!', 'https://www.supersmashflash.com/'],
+                ['🚴', 'Happy Wheels', 'Physics-based racing with hilarious ragdoll characters. Complete obstacle courses!', 'https://www.totaljerkface.com/happywheels.php']
+            ]],
+            ['⛏️ Minecraft-Like Games', [
+                ['⛏️', 'Eaglercraft', 'Play Minecraft directly in your browser. Full vanilla experience without downloads.', 'https://eaglercraft.com'],
+                ['🏗️', 'ClassiCube', 'Classic Minecraft experience. Open-source and runs right in your browser.', 'https://classicube.net'],
+                ['🎮', 'bloxd.io', 'Voxel-based multiplayer game with minigames and building mechanics.', 'https://bloxd.io'],
+                ['🧱', 'Mine Blocks', '2D Minecraft clone with crafting and building mechanics. Simple and fun!', 'https://mineblocks.com'],
+                ['🌎', 'Minetest', 'Open-source voxel game engine with infinite possibilities and mods.', 'https://minetest.net'],
+                ['📦', 'Roblox', 'Massive multiplayer platform with thousands of user-created games.', 'https://www.roblox.com']
+            ]],
+            ['⚔️ Action & Battle Games', [
+                ['⚔️', 'Diep.io', 'Multiplayer tank battle game. Upgrade your tank and defeat enemies online.', 'https://diep.io'],
+                ['🍔', 'Agar.io', 'Multiplayer game where you grow your cell by eating others. Simple but addictive!', 'https://agar.io'],
+                ['🐍', 'Slither.io', 'Multiplayer snake game. Grow your snake and compete with players worldwide.', 'https://slither.io'],
+                ['🔫', 'Krunker', 'Fast-paced multiplayer FPS game in your browser. Highly customizable.', 'https://krunker.io'],
+                ['💣', 'Zombsroyale', 'Zombie battle royale game. Fight 100 players in fast action.', 'https://zombsroyale.io'],
+                ['🎯', 'Geometry Dash', 'Rhythm platformer. Jump over obstacles in this fast-paced game.', 'https://www.geometrydash.com']
+            ]],
+            ['🏎️ Racing Games', [
+                ['🏎️', 'Madalin Stunt Cars', 'Multiplayer stunt driving game with exotic cars and massive tracks.', 'https://madalinstuntcars.com'],
+                ['🏁', 'Car Parking Multiplayer', 'Multiplayer parking game. Park your car and customize it.', 'https://carparkingmultiplayer.com'],
+                ['🚗', 'Drift Hunters', 'Free online drift racing game. Collect cars and customize them.', 'https://drifthunters.io'],
+                ['🚙', 'City Car Stunt', 'Extreme stunt driving in a massive open city environment.', 'https://citycars.io'],
+                ['🏎️', 'Turbo Moto Racing', 'High-speed motorcycle racing game with multiplayer modes.', 'https://www.turbomotoracingclub.com']
+            ]],
+            ['🧩 Puzzle & Strategy Games', [
+                ['♟️', 'Chess.com', 'Play chess online with millions of players. Learn and improve your skills.', 'https://chess.com'],
+                ['🧩', 'Tetris', 'Classic Tetris game. Stack blocks and complete lines to score points.', 'https://tetris.com'],
+                ['2048', '2048', 'Combine tiles and reach the 2048 tile. Simple but challenging puzzle game.', 'https://2048game.com'],
+                ['🎮', 'Wordle', 'Guess the word in 6 tries. A daily word puzzle challenge.', 'https://www.nytimes.com/games/wordle/'],
+                ['🔲', 'Sudoku', 'Classic number puzzle game. Solve grids and challenge yourself.', 'https://sudoku.com'],
+                ['🎯', 'Cookie Clicker', 'Idle clicker game. Click cookies and build your cookie empire!', 'https://orteil.dashnet.org/cookieclicker/']
+            ]],
+            ['⚽ Sports Games', [
+                ['⚽', 'Soccer Physics', 'Physics-based soccer game. Funny ragdoll animations and chaos!', 'https://www.soccer-physics.com'],
+                ['🏀', 'Basketball Stars', 'Shoot hoops and score points in this basketball game.', 'https://basketballstars.io'],
+                ['🎾', 'Tennis Legends', 'Play epic tennis matches online against other players.', 'https://tennislegends.com'],
+                ['🏌️', 'Mini Golf Multiplayer', 'Play mini golf with friends online. Simple fun with golf!', 'https://minigolfmultiplayer.com'],
+                ['⚾', 'Home Run Battle', 'Hit home runs and compete in baseball challenges.', 'https://www.homerunbattle.com'],
+                ['🥊', 'Boxing Random', 'Fight opponents in this boxing game. Punch, dodge, and win!', 'https://boxingrandom.com']
+            ]],
+            ['🗡️ Adventure & RPG Games', [
+                ['🗡️', 'Slime Dungeon', 'RPG adventure game. Explore dungeons and fight monsters!', 'https://www.slimedungeon.io'],
+                ['🧛', 'Town of Salem', 'Strategic social deduction game. Work with villagers or deceive them!', 'https://www.blankmediagames.com'],
+                ['⚔️', 'Sword Master Story', 'Roguelike RPG adventure. Fight monsters and upgrade your hero!', 'https://www.swordmasterstory.com'],
+                ['🏰', 'Kingdom Rush', 'Tower defense game with RPG elements. Defend your kingdom!', 'https://www.kongregate.com/games/Ironhide/kingdom-rush'],
+                ['🌙', 'Realm of The Mad God', 'MMO bullet-hell game. Permadeath roguelike adventure!', 'https://www.realmofthemadgod.com'],
+                ['🧙', 'Magic Legends', 'Fantasy RPG adventure with powerful spells and magic.', 'https://www.magiclegends.io']
+            ]],
+            ['👷 Sandbox & Building Games', [
+                ['👥', 'Tribals.io', 'Multiplayer sandbox with crafting, survival, and tribe-building gameplay.', 'https://tribals.io'],
+                ['🌍', 'Polytoria', 'Free-to-play sandbox with multiplayer, social hub, and creation tools.', 'https://polytoria.com'],
+                ['🎨', 'Gartic Phone', 'Draw and guess game with friends. Creative and hilarious!', 'https://garticphone.com'],
+                ['🎪', 'Skribbl.io', 'Draw and guess game. Quick rounds with 1-8 players online.', 'https://skribbl.io'],
+                ['🏗️', 'Paper Minecraft', 'Minecraft-style game in 2D with survival and creative modes.', 'https://paperminecraft.com'],
+                ['🌊', 'Terracraft', 'Build and explore your own world with block-based gameplay.', 'https://www.terracraft.io']
+            ]],
+            ['🎲 More Popular Games', [
+                ['🎮', 'Roblox', 'Play thousands of user-created games in one platform.', 'https://www.roblox.com'],
+                ['🕹️', 'Game Jolt', 'Indie game platform with thousands of unique games to play.', 'https://gamejolt.com'],
+                ['🎪', 'Stumble Guys', 'Funny multiplayer obstacle course game.', 'https://www.stumbleguys.com'],
+                ['⭐', 'Drift Boss', 'Simple but addictive drift driving game.', 'https://www.driftboss.io'],
+                ['🎨', 'Line Rider', 'Draw tracks and ride them with a sled character.', 'https://www.linerider.com'],
+                ['🎯', 'Shell Shockers', 'Egg-based first-person shooter multiplayer game.', 'https://shellshockers.io']
+            ]]
+        ];
+
+        const root = document.getElementById('gameSections');
+        sections.forEach(([category, games]) => {
+            const title = document.createElement('h2');
+            title.className = 'category-title';
+            title.textContent = category;
+            
+            const grid = document.createElement('div');
+            grid.className = 'games-grid';
+            
+            games.forEach(([icon, name, description, url]) => {
+                const card = document.createElement('article');
+                card.className = 'game-card';
+                card.dataset.search = (name + ' ' + description + ' ' + category).toLowerCase();
+                card.innerHTML = `
+                    <div class="game-image">${icon}</div>
+                    <div class="game-content">
+                        <h3>${name}</h3>
+                        <p>${description}</p>
+                        <a class="play-btn" href="${url}" target="_blank" rel="noopener noreferrer">Play Now</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            
+            root.append(title, grid);
+        });
+
+        const cards = [...document.querySelectorAll('.game-card')];
+        const noResults = document.getElementById('noResults');
+        const search = document.getElementById('gameSearch');
+
+        function filterGames() {
+            const query = search.value.trim().toLowerCase();
+            let visible = 0;
+            
+            cards.forEach(card => {
+                const match = !query || card.dataset.search.includes(query);
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+
+            document.querySelectorAll('.category-title').forEach(title => {
+                const grid = title.nextElementSibling;
+                const hasVisible = [...grid.children].some(card => card.style.display !== 'none');
+                title.style.display = hasVisible ? '' : 'none';
+                grid.style.display = hasVisible ? '' : 'none';
+            });
+
+            noResults.style.display = visible ? 'none' : 'block';
+        }
+
+        search.addEventListener('input', filterGames);
+        document.getElementById('searchForm').addEventListener('submit', e => e.preventDefault());
+    </script>
 </body>
 </html>
